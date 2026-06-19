@@ -1,0 +1,16 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Block private/auth pages from indexing
+Disallow: /api/
+Disallow: /signin/
+Disallow: /signup/
+Disallow: /_next/
+
+# Allow Google to crawl images
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://speedyloanfinance.com/sitemap.xml

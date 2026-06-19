@@ -31,3 +31,4 @@ const ThemeToggler = () => {
 };
 
 export default ThemeToggler;
+

@@ -117,3 +117,9 @@ body {
 .blog-details h3 {
   @apply mb-6 text-2xl font-bold dark:text-white sm:text-28;
 }
+
+/* Advanced scroll-rendering optimizations */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px; /* placeholder height to avoid scrollbar jumping */
+}

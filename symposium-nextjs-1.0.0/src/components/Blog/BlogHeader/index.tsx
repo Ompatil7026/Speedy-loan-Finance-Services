@@ -1,6 +1,5 @@
 import { getAllPosts, getPostBySlug } from "@/utils/markdown";
 import markdownToHtml from "@/utils/markdownToHtml";
-import { format } from "date-fns";
 import Image from "next/image";
 
 type Props = {
@@ -60,14 +59,14 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function BlogHead({ params }: Props) {
-    const posts = getAllPosts(["title", "date", "excerpt", "coverImage", "slug"]);
+    const posts = getAllPosts(["title", "excerpt", "coverImage", "slug"]);
     const post = getPostBySlug(params.slug, [
         "title",
         "author",
         "authorImage",
         "content",
         "coverImage",
-        "date",
+    
     ]);
 
     const content = await markdownToHtml(post.content || "");
@@ -80,7 +79,7 @@ export default async function BlogHead({ params }: Props) {
                         <div className="col-span-8">
                             <div className="flex flex-col sm:flex-row">
                                 <span className="text-base text-SlateBlueText pr-7 border-r border-solid border-white w-fit">
-                                    {format(new Date(post.date), "dd MMM yyyy")}
+                                    
                                 </span>
                                 <span className="text-base text-SlateBlueText sm:pl-7 pl-0 w-fit"></span>
                             </div>

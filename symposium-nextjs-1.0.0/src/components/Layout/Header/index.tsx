@@ -147,7 +147,9 @@ const Header: React.FC = () => {
         </div>
       </div>
       {navbarOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40" />
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40"
+        onClick={() => setNavbarOpen(false)}
+         />
       )}
 
       <div
@@ -184,28 +186,32 @@ const Header: React.FC = () => {
         </div>
         <nav className="flex flex-col items-start p-4">
           {headerData.map((item, index) => (
-            <MobileHeaderLink key={index} item={item} />
+            <MobileHeaderLink
+              key={index}
+              item={item}
+              onNavigate={() => setNavbarOpen(false)}
+            />
           ))}
           <div className="mt-4 flex flex-col space-y-4 w-full">
             <Link
-              href="#"
+              href="https://investor.sebi.gov.in/calc/emi.html"
               className="bg-transparent border border-solid border-primary text-primary px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white"
               onClick={() => {
                 setIsSignInOpen(true);
                 setNavbarOpen(false);
               }}
             >
-              Sign In
+              EMI Calculator
             </Link>
             <Link
-              href="#"
+              href="https://www.equifax.co.in/"
               className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700"
               onClick={() => {
                 setIsSignUpOpen(true);
                 setNavbarOpen(false);
               }}
             >
-              Sign Up
+              Check Credit Score
             </Link>
           </div>
         </nav>
@@ -228,3 +234,4 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+

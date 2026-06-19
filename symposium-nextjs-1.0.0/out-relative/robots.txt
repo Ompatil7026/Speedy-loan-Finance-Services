@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /signin/
+Disallow: /signup/
+
+Sitemap: https://speedyloanfinance.com/sitemap.xml

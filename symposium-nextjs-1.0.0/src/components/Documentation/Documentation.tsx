@@ -1,24 +1,20 @@
-import { Configuration } from "./Configuration"
-import { DocNavigation } from "./DocNavigation"
 import { Introduction } from "./Introduction"
 import { PackageStructure } from "./PackageStructure"
 
-
 export const Documentation = () => {
-    return (
-        <div className="dark:bg-darkmode" >
-            <div className="container p-6 lg:mt-16 mt-16 !pt-10">
-               <div className="grid grid-cols-12 gap-6">
-                <div className="lg:col-span-3 col-span-12 lg:block hidden">
-                  <DocNavigation/>
-                </div>
-                <div className="lg:col-span-9 col-span-12">
-                <Introduction />
-                <PackageStructure/>
-                
-                </div>
-               </div>
-            </div>
+  return (
+    <div className="dark:bg-darkmode min-h-screen">
+      
+      {/* OUTER WRAPPER */}
+      <div className="flex justify-center w-full mt-16 pt-10">
+        
+        {/* CENTERED CONTENT */}
+        <div className="w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+          {/* <Introduction /> */}
+          <PackageStructure />
         </div>
-    )
+
+      </div>
+    </div>
+  )
 }

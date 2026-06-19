@@ -29,8 +29,13 @@ export default function ScrollToTop() {
 
     return (
         <div
-            className={`dp_backto_top fixed z-10 bottom-[6%] md:right-[2%] right-[5%] p-5 cursor-pointer ${isVisible ? "visible" : "hidden"
-                }`}
+            className={`dp_backto_top fixed z-10 
+                md:bottom-[6%] bottom-[12%] 
+                md:right-[2%] right-[5%] 
+                p-5 cursor-pointer 
+                ${isVisible ? "visible" : "hidden"}
+                `}
+
             onClick={scrollToTop}
             aria-hidden={!isVisible} // Optional: for accessibility
         >

@@ -24,8 +24,8 @@ const BoxSlider = () => {
         breakpoint: 768, // screen width <= 768px
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,          
-        },
+          slidesToScroll: 1, 
+                },
       },
       {
         breakpoint: 480, // screen width <= 480px

@@ -26,7 +26,7 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
       <Link href={item.href} className={`text-base text-MidnightNavyText py-3 dark:text-white flex font-normal hover:text-primary dark:hover:text-primary ${path === item.href ? 'text-primary dark:!text-primary' : ' text-black dark:text-white '} ${path.startsWith(`/${item.label.toLowerCase()}`) ? 'text-primary dark:!text-primary' : null}`}>
         {item.label}
         {item.submenu && (
-          <svg xmlns="http://www.w3.org/2000/svg" width="0.7em" height="1.0em" viewBox="0 0 24 24">
+          <svg xmlns="http://www.w3.org/2000/svg" width="0.7em" height="0.5em" viewBox="0 0 24 24">
             <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m7 10l5 5l5-5" />
           </svg>
         )}
@@ -41,6 +41,7 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
             <Link
               key={index}
               href={subItem.href}
+              onClick={() => setSubmenuOpen(false)}
               className={`block px-4 py-2 text-[15px]  ${
                 path === subItem.href
                   ? "bg-primary text-white"
@@ -57,3 +58,4 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
 };
 
 export default HeaderLink;
+

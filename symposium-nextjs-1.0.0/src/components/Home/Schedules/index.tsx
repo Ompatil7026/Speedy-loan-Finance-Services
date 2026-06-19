@@ -1,6 +1,6 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 import { conferences, intermissions } from "../../../app/api/data";
 
 const Schedules = () => {
@@ -9,7 +9,7 @@ const Schedules = () => {
       <div className="flex items-center flex-wrap  w-full border border-solid border-border dark:border-dark_border md:px-14 px-6 md:mt-14 mt-6 rounded-22">
         {conferences.map((conference, index) => (
           <React.Fragment key={index}  >
-            <div data-aos="fade-up" data-aos-delay={`${index*200}`} data-aos-duration="1000"  className="flex items-center flex-wrap gap-6 justify-between w-full md:py-12 py-5 border-b border-solid border-border dark:border-dark_border last:border-b-0">
+            <div data-aos="fade-up" data-aos-delay={`${Math.min(index * 100, 400)}`} data-aos-duration="600"  className="flex items-center flex-wrap gap-6 justify-between w-full md:py-12 py-5 border-b border-solid border-border dark:border-dark_border last:border-b-0">
               <div className="lg:min-w-96 min-w-max" >
                 <h6 className="text-[26px] leading-[2.1rem] font-bold text-secondary dark:text-white max-w-286">
                   {conference.title}
@@ -39,9 +39,10 @@ const Schedules = () => {
                   <p className="text-lg font-normal text-SlateBlueText dark:text-opacity-80">
                     
                   </p>
-                  <p className="text-lg font-medium text-secondary dark:text-white">
+                  <p className="text-sm md:text-lg font-medium text-secondary dark:text-white break-words whitespace-pre-line">
                     {conference.speakers}
                   </p>
+
                 </div>
               </div>
               <div className="lg:min-w-40 min-w-max" >
@@ -56,9 +57,9 @@ const Schedules = () => {
 
             {/* Insert intermissions at appropriate places */}
             {index === 1 && (
-              <div data-aos="fade-up" data-aos-delay={`${index*200}`} data-aos-duration="1000" className="flex items-center flex-wrap justify-between w-full md:py-12 py-5 border-b border-solid border-border dark:border-dark_border">
+              <div data-aos="fade-up" data-aos-delay={`${Math.min(index * 100, 400)}`} data-aos-duration="600" className="flex items-center flex-wrap justify-between w-full md:py-12 py-5 border-b border-solid border-border dark:border-dark_border">
                 <div className="lg:min-w-96 min-w-max">
-                  <h6 className="text-[26px] leading-[2.1rem] font-bold text-secondary dark:text-white max-w-286">
+                  <h6 className="text-[26px] leading-[2.1rem] font-bold text-secondary dark:text-white max-w-286 whitespace-pre-line">
                     {intermissions[0].title}
                   </h6>
                 </div>
@@ -72,11 +73,11 @@ const Schedules = () => {
                       quality={100}
                       layout="responsive"
                       sizes="100vh"
-                      className="!w-10 !h-10 rounded-full"
+                      className="!w-10 !h-10 rounded-full "
                     />
                   </div>
                   <div>                    
-                    <p className="text-lg font-normal text-SlateBlueText dark:text-opacity-80">
+                    <p className="text-sm md:text-lg -ml-5 font-normal text-SlateBlueText dark:text-opacity-80 break-words whitespace-pre-line">
                       {intermissions[0].time}
                     </p>
                   </div>
@@ -86,9 +87,9 @@ const Schedules = () => {
             )}
 
             {index === 3 && (
-              <div data-aos="fade-up" data-aos-delay={`${index*200}`} data-aos-duration="1000" className="flex items-center flex-wrap justify-between w-full md:py-12 py-5 border-b border-solid border-border dark:border-dark_border">
+              <div data-aos="fade-up" data-aos-delay={`${Math.min(index * 100, 400)}`} data-aos-duration="600" className="flex items-center flex-wrap justify-between w-full md:py-12 py-5 border-b border-solid border-border dark:border-dark_border">
                 <div className="lg:min-w-96 min-w-max">
-                  <h6 className="text-[26px] leading-[2.1rem] font-bold text-secondary dark:text-white max-w-286">
+                  <h6 className="text-[26px] leading-[2.1rem] font-bold text-secondary dark:text-white max-w-286 whitespace-pre-line">
                     {intermissions[1].title}
                   </h6>
                 </div>
@@ -102,11 +103,11 @@ const Schedules = () => {
                       quality={100}
                       layout="responsive"
                       sizes="100vh"
-                      className="!w-10 !h-10 rounded-full"
+                      className="!w-10 !h-10 rounded-full "
                     />
                   </div>
                   <div>                    
-                    <p className="text-lg font-normal text-SlateBlueText dark:text-opacity-80">
+                    <p className="text-sm md:text-lg -ml-5 font-normal text-SlateBlueText dark:text-opacity-80 break-words whitespace-pre-line">
                       {intermissions[1].time}
                     </p>
                   </div>

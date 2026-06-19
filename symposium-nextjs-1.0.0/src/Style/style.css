@@ -41,3 +41,63 @@
 .upcoming .slick-next:before, .upcoming .slick-prev:before, .thumb .slick-next:before, .thumb .slick-prev:before{
     @apply lg:inline-block hidden;
 }
+/* Show arrows on mobile */
+@media (max-width: 1023px){
+  .upcoming .slick-next:before,
+  .upcoming .slick-prev:before,
+  .thumb .slick-next:before,
+  .thumb .slick-prev:before{
+      display: inline-block !important;
+  }
+}
+
+@media (max-width:640px){
+  .slick-prev:before,
+  .slick-next:before{
+      font-size:18px !important;
+  }
+}
+
+/* MOBILE HERO FIX */
+@media (max-width: 768px){
+
+  /* make left content full width */
+  .col-span-6{
+    grid-column: span 12 / span 12 !important;
+    text-align:center;
+  }
+
+  /* heading size mobile */
+  .col-span-6 h1{
+    font-size:28px !important;
+    line-height:1.3;
+  }
+
+  /* paragraph text */
+  .col-span-6 p{
+    font-size:16px !important;
+  }
+
+  /* buttons container center */
+  .col-span-6 .flex{
+    justify-content:center !important;
+  }
+
+  /* buttons full width mobile */
+  .col-span-6 a{
+    width:100%;
+    justify-content:center;
+  }
+
+  /* reduce button icon gap */
+  .col-span-6 span{
+    gap:10px !important;
+  }
+}
+
+@media (max-width:768px){
+  .btn, .btn_outline{
+    padding:14px 20px !important;
+    font-size:16px;
+  }
+}

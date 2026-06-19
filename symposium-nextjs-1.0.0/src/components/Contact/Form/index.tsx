@@ -72,7 +72,7 @@ const ContactForm = () => {
                                 </div>
                                 <div className="mx-0 my-2.5 w-full">
                                     <a
-                                        href="https://mail.google.com/mail/?view=cm&to=loanspeedy@gmail.com"
+                                        href="https://wa.me/917350005590?text=Hello%20Speedy%20Loan%20Team,%0D%0A%0D%0AI%20would%20like%20to%20apply%20for%20a%20loan.%0D%0A%0D%0AFirst%20Name:%0D%0ALast%20Name:%0D%0AEmail:%0D%0ALoan%20Type:%0D%0ALoan%20Amount:%0D%0ACity:%0D%0APhone%20Number:%0D%0A%0D%0AThank%20you."
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="relative z-10 btn btn-1 hover-filled-slide-down rounded-lg overflow-hidden before:bg-ElectricAqua"
@@ -81,7 +81,6 @@ const ContactForm = () => {
                                             Apply for Loan
                                         </span>
                                         </a>
-
 
 
                                 </div>

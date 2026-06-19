@@ -7,7 +7,7 @@ import { conferences } from "../../../app/api/data";
 const Upcoming = () => {
   return (
     <>
-      <section className="upcoming dark:bg-darkmode">
+      <section className="content-visibility-auto upcoming dark:bg-darkmode">
         <div className="max-w-1068 m-auto">
           <div className="container">
             <h2 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" className="text-center pb-10">Types of loans we do</h2>

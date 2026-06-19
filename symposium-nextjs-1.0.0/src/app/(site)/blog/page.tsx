@@ -1,9 +1,12 @@
-import BlogList from "@/components/Blog/BlogList";
-import TicketSection from "@/components/Home/TicketSection";
 import HeroSub from "@/components/SharedComponent/HeroSub";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
+
+const BlogList = dynamic(() => import("@/components/Blog/BlogList"));
+const TicketSection = dynamic(() => import("@/components/Home/TicketSection"));
+const Gst = dynamic(() => import("@/components/Home/Gst"));
 export const metadata: Metadata = {
-  title: "Blog | Symposium",
+  title: "Loans | Speedy Loan Finance Services",
 };
 
 const BlogPage = () => {
@@ -19,6 +22,7 @@ const BlogPage = () => {
                 breadcrumbLinks={breadcrumbLinks}
             />
             <BlogList />
+            <Gst/>
             <TicketSection/>
         </>
     );

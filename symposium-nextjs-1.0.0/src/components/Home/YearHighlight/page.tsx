@@ -45,7 +45,7 @@ const Highlight = () => {
     };
     return (
         <>
-            <section className="bg-IcyBreeze dark:bg-darklight">
+            <section className="content-visibility-auto bg-IcyBreeze dark:bg-darklight">
                 <div className="container">
                     <div className="grid md:grid-cols-12 grid-cols-1 items-center max-w-[125rem] mx-auto">
                         <div

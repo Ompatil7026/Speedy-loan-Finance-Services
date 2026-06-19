@@ -7,7 +7,7 @@ const Location = () => {
   ];
   return (
     <>
-      <section className="md:py-24 py-10 dark:bg-darkmode">
+      <section className="content-visibility-auto md:py-24 py-10 dark:bg-darkmode">
         <div className="container">
             <div className="">
                 <div className="grid lg:grid-cols-9 md:grid-cols-6 grid-cols-1 xl:gap-30 gap-0 border-b border-solid border-white border-opacity-50 pb-11 dark:border-dark_border">
@@ -18,9 +18,22 @@ const Location = () => {
                         <p className="sm:text-2xl text-xl text-secondary dark:text-darktext font-normal max-w-266 leading-10">Mayur Trade center near chinchwad railway station Zip code 411033</p>
                     </div>
                     <div className="col-span-3">
-                        <Link href="mailto:headoffice@symposium.com" className="sm:text-2xl text-xl text-secondary dark:text-SereneSky font-medium  hover:dark:text-white hover:text-RegalBlue">loanspeedy@gmail.com</Link>
-                        <Link href="tel:731-621-5503" className="sm:text-2xl text-xl text-secondary dark:text-primary flex items-center gap-2 hover:text-opacity-100 w-fit hover:dark:text-white"><span className="text-primary">Call</span>7350005590</Link>
-                    </div>
+                        <a
+                            href="mailto:loanspeedy@gmail.com?subject=Enquiry%20-%20Speedy%20Loan%20Finance%20Services"
+                            className="sm:text-2xl text-xl text-secondary dark:text-SereneSky font-medium hover:dark:text-white hover:text-RegalBlue"
+                          >
+                            loanspeedy@gmail.com
+                          </a>
+
+
+                            <Link
+                                  href="tel:+917350005590"
+                                  className="sm:text-2xl text-xl text-secondary dark:text-primary flex items-center gap-2 hover:text-opacity-100 w-fit hover:dark:text-white"
+                                >
+                        <span className="text-primary">Call</span>7350005590
+                        </Link>
+
+                         </div>
                 </div>
                 <div className="grid lg:grid-cols-9 md:grid-cols-6 grid-cols-1 gap-30 pt-12">
                     <div className="col-span-3">
