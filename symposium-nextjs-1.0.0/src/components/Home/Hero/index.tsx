@@ -62,7 +62,7 @@ const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
             </p>
 
             {/* ACTION BUTTONS */}
-            <div className="flex items-center md:justify-normal lg:justify-center justify-start flex-wrap gap-4">
+            <div className="flex items-center justify-start md:justify-normal lg:justify-center flex-wrap gap-4">
 
               {/* WHATSAPP */}
               <a
@@ -72,11 +72,10 @@ const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
                 data-aos="fade-up"
                 data-aos-delay="500"
                 data-aos-duration="1000"
-                className="btn btn-1 hover-filled-slide-down rounded-lg overflow-hidden w-full sm:w-auto px-3 py-0 text-sm 
-                sm:px-5 sm:py-0.5 sm:text-base justify-center"
+                className="btn btn-1 hover-filled-slide-down rounded-lg overflow-hidden w-auto px-4 py-2 text-sm sm:px-5 sm:py-0.5 sm:text-base justify-center"
               >
-                <span className="!flex !items-center gap-3 sm:gap-4 md:gap-6">
-                  <i className="bg-[url('/images/hero/whatsapp.png')] bg-no-repeat bg-contain w-5 h-5 sm:w-6 sm:h-6 inline-block"></i>
+                <span className="!flex !items-center gap-2 sm:gap-4 md:gap-6">
+                  <i className="bg-[url('/images/hero/whatsapp.png')] bg-no-repeat bg-contain w-5 h-5 sm:w-6 sm:h-6 inline-block flex-shrink-0"></i>
                   WhatsApp Chat
                 </span>
               </a>

@@ -158,12 +158,20 @@ export default function LoanChatbot() {
           }),
         });
 
-        const data = await res.json();
+        // Always try to parse the body — our server returns 200 with reply even on fallback
+        let data: { reply?: string } = {};
+        try {
+          data = await res.json();
+        } catch {
+          data = {};
+        }
 
         const botMessage: Message = {
           id: (Date.now() + 1).toString(),
           role: "bot",
-          text: data.reply || "I couldn't process that. Please try again.",
+          text:
+            data.reply ||
+            "I'm sorry, I couldn't process that request. Please call us at **73500 05590** or connect on WhatsApp below.\n\n[WHATSAPP_BTN]",
           timestamp: new Date(),
         };
 
@@ -175,7 +183,7 @@ export default function LoanChatbot() {
           {
             id: (Date.now() + 1).toString(),
             role: "bot",
-            text: "Sorry, something went wrong. Please call us at **73500 05590**.",
+            text: "🔌 Connection issue. Please check your internet and try again, or call us at **73500 05590**.\n\n[WHATSAPP_BTN]",
             timestamp: new Date(),
           },
         ]);
@@ -299,17 +307,20 @@ export default function LoanChatbot() {
         </a>
       </div>
 
-      {/* ─── Chat Window (Centered vertically, opening to the left of the FABs) ─── */}
+      {/* ─── Chat Window — responsive: full-screen on mobile, panel on desktop ─── */}
       <div
         ref={chatWindowRef}
-        className={`fixed z-[9998] max-w-[calc(100vw-6rem)] flex flex-col rounded-2xl overflow-hidden transition-all duration-300 origin-right -translate-y-1/2 ${isOpen
-          ? "opacity-100 scale-100 pointer-events-auto w-[418px]"
-          : "opacity-0 scale-90 pointer-events-none w-[380px]"
+        className={`fixed z-[9998] flex flex-col rounded-2xl overflow-hidden transition-all duration-300 ${isOpen
+          ? "opacity-100 scale-100 pointer-events-auto"
+          : "opacity-0 scale-90 pointer-events-none"
           }`}
         style={{
-          right: "90px",
+          // Mobile: near-full screen; Desktop: fixed panel to left of FABs
+          right: "80px",
           top: "50%",
-          height: "540px",
+          transform: "translateY(-50%)",
+          width: "min(418px, calc(100vw - 100px))",
+          height: "min(560px, calc(100vh - 80px))",
           maxHeight: "calc(100vh - 40px)",
           boxShadow: "0 20px 50px rgba(15, 23, 42, 0.25)",
           border: "1px solid rgba(226, 232, 240, 0.15)",
