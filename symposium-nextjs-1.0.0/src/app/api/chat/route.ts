@@ -147,15 +147,17 @@ interface Message {
 }
 
 // ─── Validate that the API key looks like a real Gemini key ──────────────────
+// Google AI Studio issues two key formats:
+//   Legacy : AIza...  (39 chars)
+//   Newer  : AQ....   (longer, dot-separated)
 function isValidGeminiKey(key: string | undefined): boolean {
   if (!key || key.trim() === "") return false;
   if (key.includes("REPLACE_WITH")) return false;
   if (key.includes("YOUR_KEY")) return false;
-  // Gemini API keys always start with "AIza"
-  if (!key.startsWith("AIza")) return false;
-  // Gemini keys are typically 39 characters
-  if (key.length < 30) return false;
-  return true;
+  if (key.length < 20) return false;
+  // Accept both legacy AIza... keys and newer AQ.... keys from AI Studio
+  if (key.startsWith("AIza") || key.startsWith("AQ.")) return true;
+  return false;
 }
 
 export async function POST(req: NextRequest) {
