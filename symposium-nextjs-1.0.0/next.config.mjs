@@ -2,7 +2,8 @@
 // const basePath = "/symposium-nextjs";
 const basePath = "";
 const nextConfig = {
-  // Removed output:"export" — needed for API routes to work as Netlify serverless functions
+  // Static export for Netlify (no server required — Gemini called client-side)
+  output: "export",
   trailingSlash: true,
   basePath: basePath || undefined,
   assetPrefix: basePath || undefined,
