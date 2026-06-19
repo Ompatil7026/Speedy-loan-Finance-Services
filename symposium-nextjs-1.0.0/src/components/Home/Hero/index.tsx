@@ -64,7 +64,7 @@ const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
             {/* ACTION BUTTONS */}
             <div className="flex items-center justify-start md:justify-normal lg:justify-center flex-wrap gap-4">
 
-              {/* WHATSAPP */}
+              {/* WHATSAPP — uses same base as email btn so sizing is identical */}
               <a
                 href="https://wa.me/917350005590?text=Hello%20Speedy%20Loan%20Finance%20Services,%0A%0AI%20would%20like%20to%20enquire%20about%20a%20loan.%0A%0A•%20Type%20of%20Loan:%20__________%0A•%20Loan%20Amount:%20__________%0A•%20City:%20__________%0A•%20Employment%20Type:%20Salaried%20/%20Self-Employed%0A%0APlease%20assist%20me%20with%20the%20next%20steps.%0A%0AThank%20you."
                 target="_blank"
@@ -72,15 +72,19 @@ const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
                 data-aos="fade-up"
                 data-aos-delay="500"
                 data-aos-duration="1000"
-                className="btn btn-1 hover-filled-slide-down rounded-lg overflow-hidden w-auto px-4 py-2 text-sm sm:px-5 sm:py-0.5 sm:text-base justify-center"
+                className="btn_outline btn-2 hover-outline-slide-down"
+                style={{ background: "#2563eb" }}
               >
-                <span className="!flex !items-center gap-2 sm:gap-4 md:gap-6">
-                  <i className="bg-[url('/images/hero/whatsapp.png')] bg-no-repeat bg-contain w-5 h-5 sm:w-6 sm:h-6 inline-block flex-shrink-0"></i>
+                <span
+                  className="!flex !items-center gap-3"
+                  style={{ color: "#ffffff", borderColor: "#2563eb" }}
+                >
+                  <i className="bg-[url('/images/hero/whatsapp.png')] bg-no-repeat bg-contain w-5 h-5 inline-block flex-shrink-0"></i>
                   WhatsApp Chat
                 </span>
               </a>
 
-              {/* EMAIL (FIXED) */}
+              {/* EMAIL */}
               <a
                 href="#"
                 onClick={handleEmailClick}
@@ -89,8 +93,8 @@ const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
                 data-aos-duration="1000"
                 className="btn_outline btn-2 hover-outline-slide-down group"
               >
-                <span className="!flex !items-center gap-14">
-                  <i className="bg-[url('/images/hero/mail.svg')] bg-no-repeat bg-contain w-6 h-6 inline-block"></i>
+                <span className="!flex !items-center gap-3">
+                  <i className="bg-[url('/images/hero/mail.svg')] bg-no-repeat bg-contain w-6 h-6 inline-block flex-shrink-0"></i>
                   loanspeedy@gmail.com
                 </span>
               </a>
